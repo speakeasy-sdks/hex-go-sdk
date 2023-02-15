@@ -1,4 +1,10 @@
-# github.com/speakeasy-sdks/hex-go-sdk
+# Hex Go SDK
+
+<div align="center">
+   <p>Programmatically run projects with the Hex API.</p>
+   <img src="https://img.shields.io/github/actions/workflow/status/speakeasy-sdks/hex-go-sdk/speakeasy_sdk_generation.yml?style=for-the-badge" />
+   <a href="https://learn.hex.tech/docs/develop-logic/hex-api/overview"><img src="https://img.shields.io/static/v1?label=Docs&message=API Ref&color=F5C0C0&style=for-the-badge" /></a>
+</div>
 
 <!-- Start SDK Installation -->
 ## SDK Installation
@@ -7,6 +13,18 @@
 go get github.com/speakeasy-sdks/hex-go-sdk
 ```
 <!-- End SDK Installation -->
+
+## Authentication
+
+API Requests are authenticated using Oauth 2.0 Bearer Tokens in the header of the HTTP request. The token is always bound to a single Hex user's account and requests are executed as that Hex user, meaning the user can only execute requests against projects that are in line with the current permissions for that project.
+
+### Token creation
+
+![](https://learn.hex.tech/assets/images/api-tokens-3e39d4aea5ed40b3aeff4d583c80a41d.png)
+
+Personal access tokens can be created from the API keys section of the User settings page.
+
+A new token can be created by selecting the New Token button, then inputting a description and an expiration time frame. An existing token can be regenerated at any time by selecting the three-dot menu to the right of the token, and selecting Regenerate.
 
 ## SDK Example Usage
 <!-- Start SDK Example Usage -->

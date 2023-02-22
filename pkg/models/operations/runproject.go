@@ -17,6 +17,6 @@ type RunProjectResponse struct {
 	ContentType                       string
 	ProjectRunResponsePayload         *shared.ProjectRunResponsePayload
 	RunProject422ApplicationJSONAnyOf *interface{}
-	StatusCode                        int64
+	StatusCode                        int
 	TsoaErrorResponsePayload          *shared.TsoaErrorResponsePayload
 }

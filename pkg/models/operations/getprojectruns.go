@@ -9,8 +9,8 @@ type GetProjectRunsPathParams struct {
 }
 
 type GetProjectRunsQueryParams struct {
-	Limit        *int32                       `queryParam:"style=form,explode=true,name=limit"`
-	Offset       *int32                       `queryParam:"style=form,explode=true,name=offset"`
+	Limit        *int                         `queryParam:"style=form,explode=true,name=limit"`
+	Offset       *int                         `queryParam:"style=form,explode=true,name=offset"`
 	StatusFilter *shared.ProjectRunStatusEnum `queryParam:"style=form,explode=true,name=statusFilter"`
 }
 
@@ -22,6 +22,6 @@ type GetProjectRunsRequest struct {
 type GetProjectRunsResponse struct {
 	ContentType                string
 	ProjectRunsResponsePayload *shared.ProjectRunsResponsePayload
-	StatusCode                 int64
+	StatusCode                 int
 	TsoaErrorResponsePayload   *shared.TsoaErrorResponsePayload
 }

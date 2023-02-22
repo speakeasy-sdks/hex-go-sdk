@@ -4,7 +4,7 @@ package shared
 // Response format returned by the runProject endpoint
 type ProjectRunResponsePayload struct {
 	ProjectID      string `json:"projectId"`
-	ProjectVersion int32  `json:"projectVersion"`
+	ProjectVersion int    `json:"projectVersion"`
 	RunID          string `json:"runId"`
 	RunStatusURL   string `json:"runStatusUrl"`
 	RunURL         string `json:"runUrl"`

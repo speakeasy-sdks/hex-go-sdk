@@ -15,6 +15,6 @@ type CancelRunRequest struct {
 
 type CancelRunResponse struct {
 	ContentType              string
-	StatusCode               int64
+	StatusCode               int
 	TsoaErrorResponsePayload *shared.TsoaErrorResponsePayload
 }

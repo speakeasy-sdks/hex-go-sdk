@@ -57,8 +57,8 @@ func WithSecurity(security shared.Security) SDKOption {
 func New(opts ...SDKOption) *Hex {
 	sdk := &Hex{
 		_language:   "go",
-		_sdkVersion: "1.2.0",
-		_genVersion: "1.4.5",
+		_sdkVersion: "1.2.1",
+		_genVersion: "1.4.8",
 	}
 	for _, opt := range opts {
 		opt(sdk)

@@ -15,3 +15,11 @@ Based on:
 - Speakeasy CLI 1.4.5 https://github.com/speakeasy-api/speakeasy
 ### Releases
 - [Go v1.2.0] https://github.com/speakeasy-sdks/hex-go-sdk/releases/tag/v1.2.0 - ./
+
+## Version 1.2.1
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 https://static.hex.site/openapi.json
+- Speakeasy CLI 1.4.8 https://github.com/speakeasy-api/speakeasy
+### Releases
+- [Go v1.2.1] https://github.com/speakeasy-sdks/hex-go-sdk/releases/tag/v1.2.1 - ./

@@ -57,8 +57,8 @@ func WithSecurity(security shared.Security) SDKOption {
 func New(opts ...SDKOption) *Hex {
 	sdk := &Hex{
 		_language:   "go",
-		_sdkVersion: "1.1.0",
-		_genVersion: "1.3.1",
+		_sdkVersion: "1.3.2",
+		_genVersion: "1.5.4",
 	}
 	for _, opt := range opts {
 		opt(sdk)
@@ -109,7 +109,7 @@ func (s *Hex) CancelRun(ctx context.Context, request operations.CancelRunRequest
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.CancelRunResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -159,7 +159,9 @@ func (s *Hex) GetProjectRuns(ctx context.Context, request operations.GetProjectR
 		return nil, fmt.Errorf("error creating request: %w", err)
 	}
 
-	utils.PopulateQueryParams(ctx, req, request.QueryParams)
+	if err := utils.PopulateQueryParams(ctx, req, request.QueryParams); err != nil {
+		return nil, fmt.Errorf("error populating query params: %w", err)
+	}
 
 	client := s._securityClient
 
@@ -175,7 +177,7 @@ func (s *Hex) GetProjectRuns(ctx context.Context, request operations.GetProjectR
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.GetProjectRunsResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -248,7 +250,7 @@ func (s *Hex) GetRunStatus(ctx context.Context, request operations.GetRunStatusR
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.GetRunStatusResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -328,7 +330,7 @@ func (s *Hex) RunProject(ctx context.Context, request operations.RunProjectReque
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.RunProjectResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {

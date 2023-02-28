@@ -16,6 +16,6 @@ type GetRunStatusRequest struct {
 type GetRunStatusResponse struct {
 	ContentType                  string
 	ProjectStatusResponsePayload *shared.ProjectStatusResponsePayload
-	StatusCode                   int64
+	StatusCode                   int
 	TsoaErrorResponsePayload     *shared.TsoaErrorResponsePayload
 }
